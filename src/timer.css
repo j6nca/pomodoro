@@ -1,6 +1,16 @@
 body{
     padding-bottom:0;
 }
+p{
+    margin:0;
+}
+.mini{
+    font-size: 0.8rem;
+}
+.row{
+    position: relative;
+    bottom:0;
+}
 .app {
     text-align: center;
     background-color: #282c34;

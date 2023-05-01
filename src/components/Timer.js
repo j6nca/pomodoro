@@ -8,7 +8,7 @@ const Timer = () => {
   const WORK=10;
   const [workTimer, setWorkTimer] = useState(WORK);
   const [breakTimer, setBreakTimer] = useState(BREAK);
-  const [seconds, setSeconds] = useState(WORK);
+  const [seconds, setSeconds] = useState(workTimer*MINUTE);
   const [isActive, setIsActive] = useState(false);
   const [isWorking, setIsWorking] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
@@ -19,7 +19,7 @@ const Timer = () => {
 
   function reset() {
     const start = isWorking? workTimer:breakTimer;
-    setSeconds(start);
+    setSeconds(start*MINUTE);
     setIsActive(false);
   }
 
@@ -33,7 +33,7 @@ const Timer = () => {
 
   function nextTimer(){
     const start = isWorking? workTimer:breakTimer;
-    setSeconds(start);
+    setSeconds(start*MINUTE);
   }
 
   function toggleShowSettings(){
@@ -84,7 +84,7 @@ const Timer = () => {
       <div className="time">
         {formatTime(seconds)}
       </div>
-      <p><small>(mm:ss)</small></p>
+      <p className="mini">(mm:ss)</p>
       <div className="row">
         <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
           {isActive ? 'Pause' : 'Start'}
