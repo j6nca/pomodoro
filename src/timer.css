@@ -1,3 +1,6 @@
+body{
+    padding-bottom:0;
+}
 .app {
     text-align: center;
     background-color: #282c34;
@@ -12,8 +15,9 @@
   }
   
   .time {
-    font-size: 3rem;
+    font-size: 6rem;
     padding: 2rem;
+    padding-bottom:0;
   }
   
   .button {
